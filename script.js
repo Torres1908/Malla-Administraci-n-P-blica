@@ -102,5 +102,3 @@
             actualizarProgreso();
         });
     </script>
-</body>
-</html>
