@@ -1,74 +1,3 @@
-/* --- index.html --- */
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Interactiva Administración Pública UV</title>
-  <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-  <h1>Malla Interactiva - Administración Pública UV</h1>
-  <div id="malla"></div>
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-/* --- estilos.css --- */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e6f2ff;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  color: #005b96;
-}
-
-#malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.ramo {
-  background-color: #cce6ff;
-  border: 2px solid #005b96;
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.ramo.aprobado {
-  background-color: #a3d977;
-  border-color: #4caf50;
-  text-decoration: line-through;
-}
-
-.ramo.bloqueado {
-  background-color: #f0f0f0;
-  border-color: #aaa;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.ramo h3 {
-  margin: 0 0 5px;
-  font-size: 16px;
-}
-
-.ramo p {
-  margin: 0;
-  font-size: 13px;
-  color: #333;
-}
-
-
 /* --- script.js --- */
 const ramos = [
   { id: 'fcp', nombre: 'Fundamentos de la Ciencia Política', abre: ['iip', 'hpich'] },
@@ -161,4 +90,3 @@ function aprobarRamo(ramo) {
 
 // Inicializar todo
 ramos.forEach(crearCaja);
-
