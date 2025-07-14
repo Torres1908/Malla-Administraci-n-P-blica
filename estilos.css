@@ -1,52 +1,370 @@
-/* --- estilos.css --- */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e6f2ff;
-  margin: 0;
-  padding: 20px;
-}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Malla Curricular - Administración Pública</h1>
+        <p>Haz clic en los ramos para marcarlos como aprobados y desbloquear los siguientes</p>
+        <div class="controles">
+            <button id="aprobarTodo">Aprobar todo</button>
+            <button id="reiniciar">Reiniciar progreso</button>
+        </div>
+    </header>
 
-h1 {
-  text-align: center;
-  color: #005b96;
-}
+    <main>
+        <!-- Primer Año -->
+        <div class="anio">
+            <div class="titulo-anio">Primer Año</div>
+            <div class="semestres">
+                <div class="semestre">
+                    <h3 class="titulo-semestre">I Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo" data-id="fundamentos" data-abre="ideas,historia">
+                            <div class="abre">2</div>
+                            Fundamentos de la Ciencia Política
+                            <div class="requisitos">Abre: Ideas e Instituciones Políticas; Historia Política e Institucional de Chile</div>
+                        </div>
+                        <div class="ramo" data-id="nociones" data-abre="derecho-constitucional">
+                            <div class="abre">1</div>
+                            Nociones Generales de Derecho
+                            <div class="requisitos">Abre: Derecho Constitucional</div>
+                        </div>
+                        <div class="ramo" data-id="razonamiento" data-abre="matematica">
+                            <div class="abre">1</div>
+                            Razonamiento Lógico Matemático
+                            <div class="requisitos">Abre: Matemática para la Gestión</div>
+                        </div>
+                        <div class="ramo" data-id="induccion">
+                            Inducción a la Formación Profesional
+                        </div>
+                        <div class="ramo" data-id="competencias">
+                            Competencias Lecto-Escritoras
+                        </div>
+                        <div class="ramo" data-id="teoria-organizacion" data-abre="teoria-administracion">
+                            <div class="abre">1</div>
+                            Teoría de la Organización
+                            <div class="requisitos">Abre: Teoría de la Administración</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestre">
+                    <h3 class="titulo-semestre">II Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="teoria-administracion" data-abre="administracion-publica,gestion-personas1">
+                            <div class="abre">2</div>
+                            Teoría de la Administración
+                            <div class="requisitos">Abre: Administración Pública Chilena; Gestión de Personas I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="sociologia">
+                            Sociología
+                        </div>
+                        <div class="ramo bloqueado" data-id="derecho-constitucional" data-abre="derecho-administrativo1">
+                            <div class="abre">1</div>
+                            Derecho Constitucional
+                            <div class="requisitos">Abre: Derecho Administrativo I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="matematica" data-abre="contabilidad,estadistica,administracion-financiera">
+                            <div class="abre">3</div>
+                            Matemática para la Gestión
+                            <div class="requisitos">Abre: Contabilidad General; Estadística; Administración Financiera del Estado</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="historia">
+                            Historia Política e Institucional de Chile
+                        </div>
+                        <div class="ramo bloqueado" data-id="tic" data-abre="sistema-informacion">
+                            <div class="abre">1</div>
+                            TIC
+                            <div class="requisitos">Abre: Sistema de Información</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-#malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
-}
+        <!-- Segundo Año -->
+        <div class="anio">
+            <div class="titulo-anio">Segundo Año</div>
+            <div class="semestres">
+                <div class="semestre">
+                    <h3 class="titulo-semestre">III Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="ideas">
+                            Ideas e Instituciones Políticas
+                        </div>
+                        <div class="ramo bloqueado" data-id="derecho-administrativo1" data-abre="derecho-administrativo2">
+                            <div class="abre">1</div>
+                            Derecho Administrativo I
+                            <div class="requisitos">Abre: Derecho Administrativo II</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="estadistica" data-abre="microeconomia,metodologia-cuantitativa">
+                            <div class="abre">2</div>
+                            Estadística
+                            <div class="requisitos">Abre: Microeconomía; Metodología de la Investigación Cuantitativa</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="ingles1" data-abre="ingles2">
+                            <div class="abre">1</div>
+                            Inglés I
+                            <div class="requisitos">Abre: Inglés II</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="administracion-publica" data-abre="comunicacion-publica,administracion-bienes">
+                            <div class="abre">2</div>
+                            Administración Pública Chilena
+                            <div class="requisitos">Abre: Comunicación Pública; Administración de Bienes y Servicios</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="gestion-personas1" data-abre="gestion-personas2">
+                            <div class="abre">1</div>
+                            Gestión de Personas I
+                            <div class="requisitos">Abre: Gestión de Personas II</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestre">
+                    <h3 class="titulo-semestre">IV Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="derecho-administrativo2" data-abre="regimen-laboral,administracion-financiera,derecho-internacional">
+                            <div class="abre">3</div>
+                            Derecho Administrativo II
+                            <div class="requisitos">Abre: Régimen Laboral; Administración Financiera; Derecho Internacional Público</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="microeconomia" data-abre="macroeconomia">
+                            <div class="abre">1</div>
+                            Microeconomía
+                            <div class="requisitos">Abre: Macroeconomía</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="ingles2" data-abre="ingles3">
+                            <div class="abre">1</div>
+                            Inglés II
+                            <div class="requisitos">Abre: Inglés III</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="gestion-personas2" data-abre="regimen-laboral">
+                            <div class="abre">1</div>
+                            Gestión de Personas II
+                            <div class="requisitos">Abre: Régimen Laboral en el Sector Público</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="comunicacion-publica" data-abre="sistema-informacion">
+                            <div class="abre">1</div>
+                            Comunicación Pública
+                            <div class="requisitos">Abre: Sistema de Información</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="administracion-bienes">
+                            Administración de Bienes y Servicios
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.ramo {
-  background-color: #cce6ff;
-  border: 2px solid #005b96;
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+        <!-- Tercer Año -->
+        <div class="anio">
+            <div class="titulo-anio">Tercer Año</div>
+            <div class="semestres">
+                <div class="semestre">
+                    <h3 class="titulo-semestre">V Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="regimen-laboral" data-abre="taller-toma-decision,transparencia">
+                            <div class="abre">2</div>
+                            Régimen Laboral en el Sector Público
+                            <div class="requisitos">Abre: Taller Toma de Decisión; Trasparencia y Probidad</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="contabilidad" data-abre="contabilidad-nacion,taller-toma-decision">
+                            <div class="abre">2</div>
+                            Contabilidad General
+                            <div class="requisitos">Abre: Contabilidad General de la Nación; Taller Toma de Decisión</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="administracion-financiera" data-abre="contabilidad-nacion,finanzas-publicas,taller-toma-decision">
+                            <div class="abre">3</div>
+                            Administración Financiera del Estado
+                            <div class="requisitos">Abre: Contabilidad General de la Nación; Finanzas Públicas; Taller Toma de Decisión</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="macroeconomia" data-abre="economia-internacional,taller-toma-decision">
+                            <div class="abre">2</div>
+                            Macroeconomía
+                            <div class="requisitos">Abre: Economía e Integración Internacional; Taller Toma de Decisión</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="metodologia-cuantitativa" data-abre="metodologia-cualitativa,taller-toma-decision">
+                            <div class="abre">2</div>
+                            Metodología de la Investigación Cuantitativa
+                            <div class="requisitos">Abre: Metodología de la Investigación Cualitativa; Taller Toma de Decisión</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="ingles3" data-abre="taller-toma-decision">
+                            <div class="abre">1</div>
+                            Inglés III
+                            <div class="requisitos">Abre: Taller de Integración Modelos de Toma de Decisión</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestre">
+                    <h3 class="titulo-semestre">VI Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="contabilidad-nacion" data-abre="analisis-financiero,practica1,gobierno-regional">
+                            <div class="abre">3</div>
+                            Contabilidad General de la Nación
+                            <div class="requisitos">Abre: Análisis Financiero; Practica Profesional I; Gobierno y Administración Regional</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="finanzas-publicas" data-abre="practica1">
+                            <div class="abre">1</div>
+                            Finanzas Públicas
+                            <div class="requisitos">Abre: Práctica Profesional I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="economia-internacional" data-abre="practica1">
+                            <div class="abre">1</div>
+                            Economía e Integración Internacional
+                            <div class="requisitos">Abre: Práctica Profesional I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="metodologia-cualitativa" data-abre="taller-investigacion,practica1">
+                            <div class="abre">2</div>
+                            Metodología de la Investigación Cualitativa
+                            <div class="requisitos">Abre: Taller de Investigación Aplicada; Práctica Profesional I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-toma-decision" data-abre="practica1,taller-ciclo-profesional,taller-sello1">
+                            <div class="abre">3</div>
+                            Taller de Integración Modelos de Toma de Decisión
+                            <div class="requisitos">Abre: Práctica Profesional I; Taller de Integración Ciclo Profesional; Taller de Integración Sello UV I</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="transparencia" data-abre="control-gestion,practica1,teoria-fiscalizacion">
+                            <div class="abre">3</div>
+                            Trasparencia y Probidad Administrativa
+                            <div class="requisitos">Abre: Control de la Gestión; Práctica Profesional I; Teoría y Método de la Fiscalización</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.ramo.aprobado {
-  background-color: #a3d977;
-  border-color: #4caf50;
-  text-decoration: line-through;
-}
+        <!-- Cuarto Año -->
+        <div class="anio">
+            <div class="titulo-anio">Cuarto Año</div>
+            <div class="semestres">
+                <div class="semestre">
+                    <h3 class="titulo-semestre">VII Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="sistema-informacion">
+                            Sistema de Información
+                        </div>
+                        <div class="ramo bloqueado" data-id="control-gestion" data-abre="gerencia-publica">
+                            <div class="abre">1</div>
+                            Control de la Gestión en el Sector Público
+                            <div class="requisitos">Abre: Gerencia Pública</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="derecho-internacional" data-abre="relaciones-internacionales">
+                            <div class="abre">1</div>
+                            Derecho Internacional Público
+                            <div class="requisitos">Abre: Relaciones Internacionales</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="practica1" data-abre="practica2">
+                            <div class="abre">1</div>
+                            Práctica Profesional I
+                            <div class="requisitos">Abre: Práctica Profesional II</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="teoria-fiscalizacion" data-abre="administracion-municipal">
+                            <div class="abre">1</div>
+                            Teoría y Método de la Fiscalización
+                            <div class="requisitos">Abre: Administración Municipal</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-sello1" data-abre="taller-sello2">
+                            <div class="abre">1</div>
+                            Taller de Integración Sello UV I
+                            <div class="requisitos">Abre: Taller de Integración Sello UV II</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestre">
+                    <h3 class="titulo-semestre">VIII Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="analisis-financiero" data-abre="diseno-proyectos">
+                            <div class="abre">1</div>
+                            Análisis Financiero
+                            <div class="requisitos">Abre: Diseño y Formulación de Proyectos</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="relaciones-internacionales">
+                            Relaciones Internacionales
+                        </div>
+                        <div class="ramo bloqueado" data-id="gerencia-publica" data-abre="politicas-publicas,taller-negociacion">
+                            <div class="abre">2</div>
+                            Gerencia Pública
+                            <div class="requisitos">Abre: Políticas Públicas; Taller de Negociación y Resolución de Conflictos</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="gobierno-regional">
+                            Gobierno y Administración Regional
+                        </div>
+                        <div class="ramo bloqueado" data-id="administracion-municipal">
+                            Administración Municipal
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-sello2" data-abre="taller-sello3">
+                            <div class="abre">1</div>
+                            Taller de Integración Sello UV II
+                            <div class="requisitos">Abre: Taller de Integración Sello UV III</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.ramo.bloqueado {
-  background-color: #f0f0f0;
-  border-color: #aaa;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
+        <!-- Quinto Año -->
+        <div class="anio">
+            <div class="titulo-anio">Quinto Año</div>
+            <div class="semestres">
+                <div class="semestre">
+                    <h3 class="titulo-semestre">IX Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="politicas-publicas" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Políticas Públicas
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-negociacion" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Taller de Negociación y Resolución de Conflictos
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="practica2" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Práctica Profesional II
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-ciclo-profesional" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Taller de Integración Ciclo Profesional
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="diseno-proyectos" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Diseño y Formulación de Proyectos
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-sello3" data-abre="seminario">
+                            <div class="abre">1</div>
+                            Taller de Integración Sello UV III
+                            <div class="requisitos">Abre: Seminario de Título</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestre">
+                    <h3 class="titulo-semestre">X Semestre</h3>
+                    <div class="ramos">
+                        <div class="ramo bloqueado" data-id="seminario">
+                            Seminario de Título
+                        </div>
+                        <div class="ramo bloqueado" data-id="taller-investigacion">
+                            Taller de Investigación Aplicada
+                        </div>
+                        <div class="ramo bloqueado" data-id="electiva">
+                            Asignatura Electiva
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-.ramo h3 {
-  margin: 0 0 5px;
-  font-size: 16px;
-}
+    <div class="progreso">
+        <h3>Progreso de la carrera</h3>
+        <div class="barra-progreso">
+            <div class="progreso-lleno" id="progreso-lleno"></div>
+        </div>
+        <p id="porcentaje">0% completado</p>
+    </div>
 
-.ramo p {
-  margin: 0;
-  font-size: 13px;
-  color: #333;
-}
+    <footer>
+        <p>Malla Curricular Interactiva - Administración Pública</p>
+        <p>Haz clic en los ramos para marcarlos como aprobados y desbloquear los siguientes</p>
+    </footer>
