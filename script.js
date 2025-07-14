@@ -1,3 +1,4 @@
+/* --- script.js --- */
 const ramos = [
   { id: 'fcp', nombre: 'Fundamentos de la Ciencia Política', abre: ['iip', 'hpich'] },
   { id: 'ngd', nombre: 'Nociones Generales de Derecho', abre: ['dc'] },
@@ -66,7 +67,7 @@ function crearCaja(ramo) {
   div.classList.add('ramo');
   div.id = ramo.id;
   div.innerHTML = `<h3>${ramo.nombre}</h3><p>ID: ${ramo.id}</p>`;
-  if (ramo.abre.length > 0) div.classList.add('bloqueado');
+  div.classList.add(ramo.abre.length ? 'bloqueado' : '');
   div.addEventListener('click', () => aprobarRamo(ramo));
   mallaContainer.appendChild(div);
   ramosMap[ramo.id] = { ...ramo, div, aprobado: false, bloqueado: ramo.abre.length > 0 };
@@ -75,8 +76,10 @@ function crearCaja(ramo) {
 function aprobarRamo(ramo) {
   const estado = ramosMap[ramo.id];
   if (estado.bloqueado || estado.aprobado) return;
+
   estado.aprobado = true;
   estado.div.classList.add('aprobado');
+
   for (let id of ramo.abre) {
     const siguiente = ramosMap[id];
     if (!siguiente) continue;
@@ -85,4 +88,5 @@ function aprobarRamo(ramo) {
   }
 }
 
+// Inicializar todo
 ramos.forEach(crearCaja);
